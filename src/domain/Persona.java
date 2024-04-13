@@ -14,12 +14,12 @@ public class Persona {
         /**
          * Identificador único.
          */
-        protected long idPersona;
+        private long idPersona;
 
         /**
          * El documento nacional de identidad.
          */
-        protected String documento;
+        private String documento;
 
         /**
          * Los emails conocidos de la persona.
@@ -34,12 +34,12 @@ public class Persona {
         /**
          * Los teléfonos conocidos de la persona.
          */
-        protected String[] telefonos;
+        private String[] telefonos;
 
         /**
          * El tipo de documento de identidad.
          */
-        protected String tipoDocumento;
+        private String tipoDocumento;
 
 
         // Miembros tipo método (Constructor)

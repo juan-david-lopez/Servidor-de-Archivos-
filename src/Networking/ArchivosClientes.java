@@ -50,6 +50,10 @@ public class ArchivosClientes {
             }
         }
 
+        /**
+         *
+         * @return el flujo de entrada de datos
+         */
         public DataInputStream getFlujoEntrada() {
             return flujoEntrada;
         }
