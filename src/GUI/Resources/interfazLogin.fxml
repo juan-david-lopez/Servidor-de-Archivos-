@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="350.0" prefWidth="513.0" style="-fx-background-color: #AECFE2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.GUI.java.HelloController">
+    <Pane layoutX="269.0" layoutY="104.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="162.0" prefWidth="215.0">
+        <children>
+            <ImageView fitHeight="170.0" fitWidth="206.0" layoutX="18.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@Imagenes/imgelogin.jpg" />
+                </image>
+            </ImageView>
+        </children>
+    </Pane>
+    <Label layoutX="20.0" layoutY="41.0" text="BIENVENIDOS" textFill="WHITE">
+        <font>
+            <Font size="36.0" />
+        </font>
+    </Label>
+
+    <VBox alignment="CENTER" layoutX="41.0" layoutY="113.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="144.0" prefWidth="152.0" spacing="10">
+        <TextField fx:id="correoField" promptText="Correo electrónico" />
+        <PasswordField fx:id="passwordField" prefHeight="26.0" prefWidth="152.0" promptText="Contraseña" />
+        <Button onAction="#onLoginButtonClick" text="Iniciar Sesión" />
+        <Button onAction="#onRegisterButtonClick" text="Registrar" />
+    </VBox>
+
+</AnchorPane>
