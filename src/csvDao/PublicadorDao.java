@@ -12,13 +12,11 @@ import java.util.Formatter;
     /**
      * Proporciona un adaptador enetre la aplicación y el sistema de
      * persistencia mediante archivos csv.
-     *
+     * <p>
      * Funciona como una aproximación a la práctica denominada
      * Data Access Object (Objeto de acceso a datos).
-     *
      * Esta clase es un ejercicio de práctica de las utilidades del paquete
      * de java.io para escribir y leer archivos.
-     *
      * Esta clase implementa la interfaz Closeable a fin de que alguna clase
      * externa que la instancie pueda invocar su método de cerrado de recursos
      * en en este caso significa cerrar los flujos o conexiones con los archivos.
@@ -26,9 +24,7 @@ import java.util.Formatter;
      * try con recursos (try with resources) entonces al final del blocke de los
      * corchetes (ámbito) el systema Java automáticamente llamará la función close()
      * a fin de cerrar los flujos de datos con los archivos csv. Por ejemplo:
-     *
      * try(PublicadorDao miPublicador = new PublicadorDao()) {...}
-     *
      * La sentencia anterior hará un llamado automático al metodo close() de la variable
      * miPublicador cuando la ejecución del programa llegue al corchete de cierre.
      */
