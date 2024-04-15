@@ -27,20 +27,20 @@
                </ImageView>
            </children>
        </Pane>
-       <Label layoutX="20.0" layoutY="41.0" text="BIENVENIDOS" textFill="WHITE">
+       <Label layoutX="33.0" layoutY="38.0" text="BIENVENIDOS" textFill="WHITE">
            <font>
                <Font size="36.0" />
            </font>
        </Label>
    
-       <VBox alignment="CENTER" layoutX="41.0" layoutY="113.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="144.0" prefWidth="152.0" spacing="10">
+       <VBox alignment="CENTER" layoutX="52.0" layoutY="105.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="144.0" prefWidth="152.0" spacing="20.0">
       <children>
               <TextField fx:id="correoField" promptText="Correo electrónico" />
               <PasswordField fx:id="passwordField" prefHeight="26.0" prefWidth="152.0" promptText="Contraseña" />
-              <Button fx:id="IniciarSesion" onAction="#onLoginButtonClick" text="Iniciar Sesión" />
-              <Button fx:id="Registrar" onAction="#onRegisterButtonClick" text="Registrar" />
       </children>
        </VBox>
+        <Button fx:id="Registrar" layoutX="51.0" layoutY="279.0" onAction="#onRegisterButtonClick" prefHeight="31.0" prefWidth="105.0" text="Registrarse" />
+        <Button fx:id="IniciarSesion" layoutX="169.0" layoutY="279.0" onAction="#onLoginButtonClick" text="Iniciar Sesión" />
    </children>
 
 </AnchorPane>

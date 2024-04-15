@@ -3,7 +3,10 @@ package src.domain;
 import java.util.ArrayList;
 import java.util.Objects;
 public class Publicador {
-    // Miembros tipo variable.
+    /**
+     * esta clase se ecarga de representar a los publicadores siendo estos los que suben sus articulos, fotos
+     * para poder
+     */
 
     /**
      * Identificador único del publicador.
