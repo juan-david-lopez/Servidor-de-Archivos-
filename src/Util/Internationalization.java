@@ -1,6 +1,5 @@
 package src.Util;
 
-package Ejercicios;
 import java.text.MessageFormat;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -58,10 +57,10 @@ public class Internationalization {
     String titulo = Internationalization.getMessage("ventana.titulo");
 
     // Obtener el mensaje para el mensaje de éxito de inicio de sesión
-    String mensajeExito = Internationalization.getMessage("mensaje.login.exito", correo);
+    String mensajeExito = Internationalization.getMessage("mensaje.login.exito");
 
     // Cambiar al español
     Locale spanishLocale = new Locale("es");
-    String mensajeExito = Internationalization.getMessage(spanishLocale, "mensaje.login.exito", correo);
+    String mjExito = Internationalization.getMessage(spanishLocale, "mensaje.login.exito");
 
 }
