@@ -1,6 +1,10 @@
 package src.domain;
 import java.util.Objects;
 public class Cliente {
+    /**
+     * cliente se encarga de ser la representacion de un cliente que guarda todo lo que necesecita en el
+     * programa esto siendo articulos y fotos
+     */
     public long idCliente;
 
     /**
@@ -36,7 +40,6 @@ public class Cliente {
         }
 
 
-        // Miembros tipo método (Accesores)
 
         /**
          * @return el idCliente
