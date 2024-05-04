@@ -43,7 +43,7 @@ public class ArchivosServidor {
                 this.flujoSalida.close();
                 this.conector.close();
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println(e);
             }
         }
 

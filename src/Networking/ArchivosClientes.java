@@ -9,7 +9,7 @@ public class ArchivosClientes {
     public class ClienteArchivos {
 
         private Socket conector;
-        private String direccionIP;
+        private final String direccionIP;
         private DataInputStream flujoEntrada;
         private DataOutputStream flujoSalida;
         private int puerto;
@@ -46,7 +46,7 @@ public class ArchivosClientes {
                 this.flujoSalida.close();
                 this.conector.close();
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println(e);
             }
         }
 

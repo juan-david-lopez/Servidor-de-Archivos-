@@ -1,7 +1,0 @@
-:
-jose:123
-jose :123
-jose:123
-jose :123
-JOSE:123
-jose:123
