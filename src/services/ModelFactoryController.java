@@ -22,11 +22,11 @@ public class ModelFactoryController {
         return false;
     }
 
-    public boolean CrearClienteo(){
+    public boolean CrearClienteo(long idCliente, String nombre, String rutaArticulos, String rutaFotos){
 
         return false;
     }
-    public boolean CrearPublicador(){
+    public boolean CrearPublicador(long idPublicador, String nombre, String rutaCarpetaArticulos, String rutaCarpetaFotos){
 
         return false;
     }

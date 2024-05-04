@@ -19,13 +19,7 @@ public class Persitencias {
         }
     }
     public void GuardarCliente(Cliente cliente) throws IOException{
-        try {
-            clienteDao.guardarClienteDao(cliente);
-        } catch (GduqExceptions.PublicadorDuplicadoException | GduqExceptions.CsvDePublicadorMalFormado e) {
-        throw new RuntimeException(e);
-    }
-
-
+        clienteDao.guardarClienteDao(cliente);
     }
 
 }
