@@ -175,9 +175,9 @@ import java.util.Formatter;
          * @throws IOException En caso de presentarse problemas para abrir
          *         o conectarse con el archivo, entonces se lanza la excepción
          *         hacía los invocadores de este método.
-         * @throws GduqExceptions.CsvDePublicadorMalFormado Si el archivo csv no tiene la cantidad de columnas necesarias.
+         * @throws Exceptions.CsvDePublicadorMalFormado Si el archivo csv no tiene la cantidad de columnas necesarias.
          */
-        private long consultarIdMaximo() throws IOException, GduqExceptions.CsvDePublicadorMalFormado {
+        private long consultarIdMaximo() throws IOException, Exceptions.CsvDePublicadorMalFormado {
             long idActual;
             long idMax = 0;
             String linea;
@@ -189,7 +189,7 @@ import java.util.Formatter;
                         idMax = idActual;
                     }
                 } else {
-                    throw new GduqExceptions().new CsvDePublicadorMalFormado();
+                    throw new Exceptions().new CsvDePublicadorMalFormado();
                 }
             }
             return idMax;
@@ -202,9 +202,9 @@ import java.util.Formatter;
          * @param nombre Nombre del publicador que se pretende registrar.
          * @return true si el nombre ya existe, de otro modo false.
          * @throws IOException Si durante la gestión del flujo de datos se presenta un error.
-         * @throws GduqExceptions.CsvDePublicadorMalFormado Si el archivo csv no tiene la cantidad de columnas necesarias.
+         * @throws Exceptions.CsvDePublicadorMalFormado Si el archivo csv no tiene la cantidad de columnas necesarias.
          */
-        public boolean existePublicador(String nombre) throws IOException, GduqExceptions.CsvDePublicadorMalFormado {
+        public boolean existePublicador(String nombre) throws IOException, Exceptions.CsvDePublicadorMalFormado {
             String linea;
             String nombreRegistroActual;
             while( (linea = lectorBufereado.readLine()) != null ) {
@@ -215,7 +215,7 @@ import java.util.Formatter;
                         return true;
                     }
                 } else {
-                    throw new GduqExceptions().new CsvDePublicadorMalFormado();
+                    throw new Exceptions().new CsvDePublicadorMalFormado();
                 }
             }
             return false;
@@ -230,9 +230,9 @@ import java.util.Formatter;
          * @throws IOException En caso de presentarse problemas para abrir
          *         o conectarse con el archivo, entonces se lanza la excepción
          *         hacía los invocadores de este método.
-         * @throws GduqExceptions.CsvDePublicadorMalFormado Si el archivo csv no tiene la cantidad de columnas necesarias.
+         * @throws Exceptions.CsvDePublicadorMalFormado Si el archivo csv no tiene la cantidad de columnas necesarias.
          */
-        private long generarId() throws GduqExceptions.CsvDePublicadorMalFormado, IOException {
+        private long generarId() throws Exceptions.CsvDePublicadorMalFormado, IOException {
             long id = consultarIdMaximo();
             return ++id;
         }
@@ -242,15 +242,15 @@ import java.util.Formatter;
          *
          * @param publicador El publicador a guardar.
          * @return El identificador del publicador guardado.
-         * @throws GduqExceptions.PublicadorDuplicadoException Si el publicador que se desea registrar
+         * @throws Exceptions.PublicadorDuplicadoException Si el publicador que se desea registrar
          *         ya se encuentra en el archivo CSV
          * @throws IOException En caso de presentarse problemas para abrir
          *         o conectarse con el archivo, entonces se lanza la excepción
          *         hacía los invocadores de este método.
-         * @throws GduqExceptions.CsvDePublicadorMalFormado Si el archivo csv no tiene la cantidad de columnas necesarias.
+         * @throws Exceptions.CsvDePublicadorMalFormado Si el archivo csv no tiene la cantidad de columnas necesarias.
          */
         public long guardarPublicador(Publicador publicador)
-                throws GduqExceptions.PublicadorDuplicadoException, IOException, GduqExceptions.CsvDePublicadorMalFormado {
+                throws Exceptions.PublicadorDuplicadoException, IOException, Exceptions.CsvDePublicadorMalFormado {
 
             try {
                 // Se abre el flujo de datos con el archivo csv.
@@ -258,7 +258,7 @@ import java.util.Formatter;
 
                 // Se verifica si ya existe un publicador registrado con el mismo nombre.
                 if(existePublicador(publicador.getNombre())) {
-                    GduqExceptions.PublicadorDuplicadoException pde = new GduqExceptions().new PublicadorDuplicadoException();
+                    Exceptions.PublicadorDuplicadoException pde = new Exceptions().new PublicadorDuplicadoException();
                     pde.setSistemaDePersistencia(PublicadorDao.SISTEMA_DE_PERSISTENCIA);
                     pde.setNombreDelPublicador(publicador.getNombre());
                     throw pde;

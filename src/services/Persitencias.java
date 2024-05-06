@@ -4,22 +4,31 @@ import src.csvDao.PublicadorDao;
 import src.csvDao.clienteDao;
 import src.domain.Cliente;
 import src.domain.Publicador;
-import src.exceptions.GduqExceptions;
+import src.exceptions.Exceptions;
 
 import java.io.IOException;
 
 public class Persitencias {
     private PublicadorDao publicadorDao;
+    private clienteDao clienteDao;
     private clienteDao clienteDa;
-    public void GuardarPublicador(Publicador publica) throws IOException {
+    public long GuardarPublicador(Publicador publica) throws IOException {
+        long idpublicador;
         try {
-            publicadorDao.guardarPublicador(publica);
-        } catch (GduqExceptions.PublicadorDuplicadoException | GduqExceptions.CsvDePublicadorMalFormado e) {
+            idpublicador = publicadorDao.guardarPublicador(publica);
+        } catch (Exceptions.PublicadorDuplicadoException | Exceptions.CsvDePublicadorMalFormado e) {
             throw new RuntimeException(e);
         }
+        return idpublicador;
     }
-    public void GuardarCliente(Cliente cliente) throws IOException{
-        clienteDao.guardarClienteDao(cliente);
+    public long GuardarCliente(Cliente cliente) throws IOException{
+        long idcliente;
+        try {
+            idcliente = clienteDao.guardarClienteDao(cliente);
+        } catch (Exceptions.CsvDePublicadorMalFormado e) {
+            throw new RuntimeException(e);
+        }
+        return idcliente;
     }
 
 }

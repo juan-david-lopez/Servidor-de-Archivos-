@@ -2,7 +2,7 @@ package src.exceptions;
 
 import javax.swing.*;
 
-public class GduqExceptions extends Exception {
+public class Exceptions extends Exception {
 
         // Miembros tipo variable.
 
@@ -11,21 +11,21 @@ public class GduqExceptions extends Exception {
          */
         private static final long serialVersionUID = 1L;
 
-        public GduqExceptions() {
+        public Exceptions() {
             super();
         }
 
-        public GduqExceptions(String message) {
+        public Exceptions(String message) {
             super(message);
         }
 
-        public GduqExceptions(String message, Exception excep) {
+        public Exceptions(String message, Exception excep) {
             super(message, excep);
         }
 
         // Miembros tipo clase
 
-        public class PublicadorDuplicadoException extends GduqExceptions {
+        public class PublicadorDuplicadoException extends Exceptions {
 
             private static final long serialVersionUID = 1L;
             private String sistemaDePersistencia; 	// BD o CSV.
@@ -72,12 +72,8 @@ public class GduqExceptions extends Exception {
             }
         }
 
-        public class CsvDePublicadorMalFormado extends GduqExceptions {
-
+        public class CsvDePublicadorMalFormado extends Exceptions {
             private static final long serialVersionUID = 1L;
-
-
-
             private String sistemaDePersistencia; 	// CSV.
             private String nombreDelPublicador;
             public CsvDePublicadorMalFormado() {

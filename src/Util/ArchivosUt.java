@@ -6,7 +6,7 @@ public class ArchivosUt {
         // Ruta de la carpeta para recibir los artículos del publicador.
         String feedDeEntradaArticulos = String.format(
                 "%s/%s/%s",
-                "C:/Users/lenovo/Documents/grupo_dia/feed_de_entrada/",
+                "C:",
                 abreviatura,
                 "articulos"
         );
@@ -14,7 +14,7 @@ public class ArchivosUt {
         // Ruta de la carpeta para recibir las fotos del publicador.
         String feedDeEntradaFotos = String.format(
                 "%s/%s/%s",
-                "C:/Users/lenovo/Documents/grupo_dia/feed_de_entrada/",
+                "C:",
                 abreviatura,
                 "fotos"
         );
