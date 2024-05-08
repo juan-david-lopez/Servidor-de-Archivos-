@@ -11,7 +11,6 @@ import java.io.IOException;
 public class Persitencias {
     private PublicadorDao publicadorDao;
     private clienteDao clienteDao;
-    private clienteDao clienteDa;
     public long GuardarPublicador(Publicador publica) throws IOException {
         long idpublicador;
         try {
