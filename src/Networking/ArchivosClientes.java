@@ -6,35 +6,32 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class ArchivosClientes {
-    public class ClienteArchivos {
+    private Socket conector;
+    private String direccionIP;
+    private DataInputStream flujoEntrada;
+    private DataOutputStream flujoSalida;
+    private int puerto;
 
-        private Socket conector;
-        private final String direccionIP;
-        private DataInputStream flujoEntrada;
-        private DataOutputStream flujoSalida;
-        private int puerto;
-
-        public ClienteArchivos(String direccionIP, int puerto) {
+    public ArchivosClientes(String direccionIP, int puerto) {
             this.direccionIP = direccionIP;
             this.puerto = puerto;
-        }
+    }
 
-        /**
-         *
-         * @return manda si se puede iniciar la conexion
-         */
-        public boolean iniciarConexionConServidor() {
-            try {
-                this.conector 		= new Socket(this.direccionIP, this.puerto);
-                this.flujoEntrada 	= new DataInputStream(this.conector.getInputStream());
-                this.flujoSalida 	= new DataOutputStream(conector.getOutputStream());
-
+    /**
+     *
+     * @return manda si se puede iniciar la conexion
+     */
+    public boolean iniciarConexionConServidor() {
+        try {
+            this.conector 		= new Socket(this.direccionIP, this.puerto);
+            this.flujoEntrada 	= new DataInputStream(this.conector.getInputStream());
+            this.flujoSalida 	= new DataOutputStream(conector.getOutputStream());
                 return true;
-            } catch(Exception e) {
-                return false;
-            } finally {
-               cerrarRecursos();
-            }
+        } catch(Exception e) {
+            return false;
+        } finally {
+            cerrarRecursos();
+        }
         }
 
         /**
@@ -71,4 +68,3 @@ public class ArchivosClientes {
         }
     }
 
-}

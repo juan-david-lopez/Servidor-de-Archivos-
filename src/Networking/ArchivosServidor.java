@@ -6,7 +6,7 @@ import java.net.Socket;
 import java.io.IOException;
 
 public class ArchivosServidor {
-    public class ClienteArchivos {
+
 
         private Socket conector;
         private String direccionIP;
@@ -14,7 +14,7 @@ public class ArchivosServidor {
         private DataOutputStream flujoSalida;
         private int puerto;
 
-        public ClienteArchivos(String direccionIP, int puerto) {
+        public ArchivosServidor(String direccionIP, int puerto) {
             this.direccionIP = direccionIP;
             this.puerto = puerto;
         }
@@ -64,4 +64,3 @@ public class ArchivosServidor {
         }
     }
 
-}
